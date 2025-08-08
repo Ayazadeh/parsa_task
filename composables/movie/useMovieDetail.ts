@@ -4,7 +4,7 @@ export const useMovieDetail = (id: number) => {
 	if (!id) throw new Error("id is missing");
 
 	const getMovieDetail = useMovieDetailService();
-	const { data, pending, error } = useLazyAsyncData("movie-detail", () =>
+	const { data, pending, error } = useLazyAsyncData(`movie-detail-${id}`, () =>
 		getMovieDetail(id)
 	);
 
