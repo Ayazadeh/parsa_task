@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="flex flex-row items-center justify-between bg-[#242629] z-40 h-12"
+		class="flex flex-row items-center justify-between bg-[#242629] z-40 h-16"
 	>
 		<section class="flex flex-row items-center">
 			<AppButton class="lg:hidden block" @click="toggleMenu">
