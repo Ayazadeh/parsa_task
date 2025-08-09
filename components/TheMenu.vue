@@ -22,7 +22,7 @@
 				</router-link>
 			</div>
 		</section>
-		<section class="flex flex-row items-center gap-1">
+		<section class="flex flex-row items-center justify-center gap-1">
 			<ArrowLeftIcon />
 			<AppButton menu>
 				<NotificationIcon />
