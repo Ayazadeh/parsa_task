@@ -8,3 +8,12 @@ body {
     color: white;   
     background-color: #1B1C1F;
 }
+
+.button {
+    @apply rounded-sm bg-[#242629] py-3 px-4;
+}
+
+.buttonMenu {
+    @apply rounded-sm bg-[#1B1C1F] p-2 w-12 h-12;
+} 
+
