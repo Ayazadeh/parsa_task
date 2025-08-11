@@ -10,24 +10,21 @@
 			</div>
 		</section>
 		<section class="grid grid-cols-12 grid-rows-1 gap-1 h-16">
-			<div class="col-span-7">
-				<ResolutionIcon />
-				<div class="flex flex-col">
-					<span>{{ detail?.title_en }}</span>
-					<span class="text-xs text-gray-400">{{ detail?.title_fa }}</span>
-				</div>
+			<div class="col-span-8 flex flex-row justify-between items-center">
+				<MovieTitle :title-en="detail?.title_en" :title-fa="detail?.title_fa" />
 				<div>
 					<AppButton> webdl - 1080p کیفیت </AppButton>
 				</div>
 			</div>
-			<div class="col-span-5">
+			<div class="col-span-4 flex flex-row items-center">
 				<div class="flex flex-row items-center" dir="ltr">
 					<img
 						src="assets/images/imdb.png"
 						alt="imdb"
 						class="w-[24px] h-[24px] rounded-[2px]"
 					/>
-					<span class="text-xl font-bold">{{ detail?.imdb }}</span
+					<span class="text-xl font-bold">
+						{{ detail?.imdb }} </span
 					>/10
 					<StarIcon />
 					<StarIcon />
@@ -47,7 +44,13 @@
 			<div class="grid grid-cols-12 gap-3">
 				<!-- Video Player Section -->
 				<div class="relative mx-auto col-span-8 h-[456px] w-full">
-					<img :src="detail?.poster" alt="poster" class="w-full h-full" />
+					<img
+						:src="detail?.poster"
+						alt="poster"
+						v-if="detail?.poster"
+						class="w-full"
+					/>
+					<div class="w-full h-full bg-gray-400/20">loading...</div>
 				</div>
 
 				<!-- Sidebar -->
@@ -75,7 +78,6 @@
 <script setup lang="ts">
 import { useMovieDetail } from "~/composables/movie/useMovieDetail";
 import ArrowLeftIcon from "~/components/icons/ArrowLeftIcon.vue";
-import ResolutionIcon from "~/components/icons/ResolutionIcon.vue";
 import StarIcon from "~/components/icons/StarIcon.vue";
 import ShareIcon from "~/components/icons/ShareIcon.vue";
 import FrameIcon from "~/components/icons/FrameIcon.vue";
