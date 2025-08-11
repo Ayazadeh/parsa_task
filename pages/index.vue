@@ -22,7 +22,7 @@
 				<MovieRating :rate="detail?.imdb" />
 				<AppButton>
 					<FrameIcon />
-				</AppButton>	
+				</AppButton>
 				<AppButton>
 					<ShareIcon />
 				</AppButton>
@@ -34,16 +34,21 @@
 				<div class="relative mx-auto col-span-8 h-[456px] w-full">
 					<img
 						v-if="detail?.poster"
-						:src="detail?.poster"
+						:src="detail.poster"
 						alt="poster"
-						class="w-full"
+						class="w-full h-full"
 					/>
-					<div v-else class="w-full h-full flex items-center justify-center bg-gray-400/20">ویدیو</div>
+					<div
+						v-else	
+						class="w-full h-full flex items-center justify-center bg-gray-400/20"
+					>
+						ویدیو
+					</div>
 				</div>
 
 				<!-- Sidebar -->
-				<aside class="relative col-span-4 h-[456px]">
-					<EpisodeItem 
+				<aside class="relative col-span-4 h-[456px] w-full">
+					<EpisodeItem
 						v-for="movie in detail?.episodes"
 						:key="movie.number"
 						:title="movie.title"

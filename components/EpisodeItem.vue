@@ -1,5 +1,5 @@
 <template>
-	<div class="mb-4 flex items-center">
+	<div class="flex flex-row gap-4 space-y-5 items-center">
 		<img v-if="poster" :src="poster" class="w-16 h-24 object-cover mr-2" />
 		<div
 			v-else
